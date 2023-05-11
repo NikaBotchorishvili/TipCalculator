@@ -1,9 +1,35 @@
-@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200&display=swap");
 @forward "./abstracts/colors";
+@use "./components/splitter";
+@use "./components/results";
+@use "./abstracts/colors" as c;
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200&display=swap");
+
 
 *{
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
     font-family: 'Nunito Sans', sans-serif;
+    font-weight: 900;
+}
+
+#root{
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+body{
+    background: c.$lightGrayishCyan;
+}
+input[type='number'] {
+    -moz-appearance: textfield;
+}
+
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+button{
+    cursor: pointer;
 }

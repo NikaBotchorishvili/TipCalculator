@@ -1,0 +1,68 @@
+@use "../abstracts/colors" as c;
+
+
+form{
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    color: c.$darkGrayishCyan;
+    
+    .input-group{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        label{
+            font-size: 1.2rem;
+        }
+        .input-container{
+            position: relative;
+            input{
+                background-color: c.$veryLightGrayishCyan;
+                border: none;
+                border-radius: 5px;
+                text-align: right;
+                padding: 10px 20px;
+                color: c.$veryDarkCyan;
+                font-weight: 900;
+                font-size: 1rem;
+                &:focus{
+                    outline: none;
+                    outline: 1px solid c.$strongCyan;
+                }
+            }
+            img{
+                position: absolute;
+                left: 10px;
+                top: 25%;
+            }
+        }
+        .tips{
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            grid-auto-rows: 1fr;
+            gap: 10px;
+            .tip{
+                color: c.$white;
+                background: c.$veryDarkCyan;
+                border: none;
+                border-radius: 5px;
+                font-size: 1.3rem;
+                padding: 4px;
+                &:last-child{
+                    background-color: c.$veryLightGrayishCyan;
+                    color: c.$darkGrayishCyan;
+                    text-align: center;
+                    &:focus{
+                        outline: none;
+                        outline: 1px solid c.$strongCyan;
+                    }
+                }
+            }
+
+        }
+    }
+}
+
+.selected{
+    background-color: c.$strongCyan !important;
+}
