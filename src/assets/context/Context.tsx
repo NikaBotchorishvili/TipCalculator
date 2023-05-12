@@ -19,6 +19,7 @@ interface context {
 	formData?: formData;
 	setFormData?: Function;
 	handleChange?: Function;
+	handleReset?: Function;
 	errors?: errors;
 	results?: results;
 }
@@ -63,21 +64,20 @@ export function ContextProvider({ children }: Props) {
 				peopleAmount: null,
 				tip: null,
 			};
-			console.log(parsedBill);
 			if (parsedBill === 0) {
-				errs.bill == "Can't be zero";
+				errs.bill = "Can't be zero";
 			} else if (isNaN(parsedBill) && typeof parsedBill === "number") {
 				errs.bill = "Must be a number";
 			}
 
 			if (parsedTip === 0) {
-				errs.tip == "Can't be zero";
+				errs.tip = "Can't be zero";
 			} else if (isNaN(parsedTip) && typeof parsedTip === "number") {
 				errs.tip = "Must be a number";
 			}
 
 			if (parsedPeopleAmount <= 0) {
-				errs.peopleAmount == "Can't be less or equal to zero";
+				errs.peopleAmount = "Can't be less or equal to zero";
 			} else if (isNaN(parsedPeopleAmount) && typeof parsedPeopleAmount === "number"
 			) {
 				errs.peopleAmount = "Must be a number";
@@ -95,6 +95,12 @@ export function ContextProvider({ children }: Props) {
 		}
 	}, [formData]);
 
+	const handleReset = () => {
+		setErrors({tip: null, bill: null, peopleAmount: null});
+		setFormData({tip: "", peopleAmount: "", bill: ""});
+		setResults({tipAmount: null, totalAmount: null});
+	}
+
 	const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 		const { name, value } = e.target;
 
@@ -109,6 +115,7 @@ export function ContextProvider({ children }: Props) {
 		handleChange: handleChange,
 		errors: errors,
 		results: results,
+		handleReset: handleReset,
 	};
 
 	return (
