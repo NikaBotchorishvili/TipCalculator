@@ -24,7 +24,6 @@ interface context {
 	results?: results;
 }
 
-
 interface errors {
 	bill?: string | null;
 	tip?: string | null;
@@ -78,17 +77,23 @@ export function ContextProvider({ children }: Props) {
 
 			if (parsedPeopleAmount <= 0) {
 				errs.peopleAmount = "Can't be less or equal to zero";
-			} else if (isNaN(parsedPeopleAmount) && typeof parsedPeopleAmount === "number"
+			} else if (
+				isNaN(parsedPeopleAmount) &&
+				typeof parsedPeopleAmount === "number"
 			) {
 				errs.peopleAmount = "Must be a number";
 			}
 
 			if (Object.values(errs).every((err) => err == null)) {
 				setErrors({ tip: null, bill: null, peopleAmount: null });
-				let totalTipPerPerson = parsedBill * (parsedTip / 100) /parsedPeopleAmount
+				let totalTipPerPerson =
+					(parsedBill * (parsedTip / 100)) / parsedPeopleAmount;
 				let totalPerPerson = parsedBill / parsedPeopleAmount;
 
-				setResults({totalAmount: totalPerPerson, tipAmount: totalTipPerPerson})
+				setResults({
+					totalAmount: totalPerPerson,
+					tipAmount: totalTipPerPerson,
+				});
 			} else {
 				setErrors(errs);
 			}
@@ -96,10 +101,10 @@ export function ContextProvider({ children }: Props) {
 	}, [formData]);
 
 	const handleReset = () => {
-		setErrors({tip: null, bill: null, peopleAmount: null});
-		setFormData({tip: "", peopleAmount: "", bill: ""});
-		setResults({tipAmount: null, totalAmount: null});
-	}
+		setErrors({ tip: null, bill: null, peopleAmount: null });
+		setFormData({ tip: "", peopleAmount: "", bill: "" });
+		setResults({ tipAmount: null, totalAmount: null });
+	};
 
 	const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 		const { name, value } = e.target;
