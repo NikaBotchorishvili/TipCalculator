@@ -1,5 +1,5 @@
-import Result from "./result";
-import Form from "./form";
+import Result from "./components/Result";
+import Form from "./components/Form";
 
 function Splitter() {
     return (

@@ -1,4 +1,5 @@
 @forward "./abstracts/colors";
+@forward "./abstracts/mixins";
 @use "./components/splitter";
 @use "./components/results";
 @use "./abstracts/colors" as c;

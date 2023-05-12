@@ -1,0 +1,9 @@
+@use "./colors" as c;
+
+
+@mixin button {
+    border: none;
+    border-radius: 5px;
+    font-size: 1.3rem;
+    padding: 4px;
+}

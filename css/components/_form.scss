@@ -1,5 +1,5 @@
 @use "../abstracts/colors" as c;
-
+@use "../abstracts/mixins" as m;
 
 form{
     display: flex;
@@ -11,8 +11,15 @@ form{
         display: flex;
         flex-direction: column;
         gap: 10px;
-        label{
-            font-size: 1.2rem;
+        .label-container{
+            display: flex;
+            justify-content: space-between;
+            label{
+                font-size: 1.2rem;
+            }
+            .error{
+                color: red;
+            }
         }
         .input-container{
             position: relative;
@@ -44,10 +51,8 @@ form{
             .tip{
                 color: c.$white;
                 background: c.$veryDarkCyan;
-                border: none;
-                border-radius: 5px;
-                font-size: 1.3rem;
-                padding: 4px;
+                background: c.$strongCyan;
+                @include m.button;
                 &:last-child{
                     background-color: c.$veryLightGrayishCyan;
                     color: c.$darkGrayishCyan;
@@ -63,6 +68,14 @@ form{
     }
 }
 
+
+
+.red-outline{
+    outline-color: red;
+}
+
 .selected{
-    background-color: c.$strongCyan !important;
+    @include m.button;
+    background-color: c.$lightGrayishCyan ;
+    color: c.$veryDarkCyan ;
 }
