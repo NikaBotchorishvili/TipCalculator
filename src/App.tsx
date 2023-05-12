@@ -4,7 +4,7 @@ import ContextProvider from "./assets/context/Context";
 function App() {
   return (
     <ContextProvider>
-      <img src="./images/logo.svg" alt="logo" />
+      <img src="/images/logo.svg" alt="logo" />
       <Splitter />
     </ContextProvider>
   )

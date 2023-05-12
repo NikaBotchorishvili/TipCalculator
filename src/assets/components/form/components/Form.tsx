@@ -13,7 +13,7 @@ function Form() {
 					
 				</div>
 				<div className="input-container">
-					<img src="../../images/icon-dollar.svg" alt="Dollar Icon" />
+					<img src="/images/icon-dollar.svg" alt="Dollar Icon" />
 					<input
 						onChange={(e) => handleChange?.(e)}
 						type="number"
@@ -54,7 +54,7 @@ function Form() {
 				</div>
 
 				<div className="input-container">
-					<img src="../../images/icon-person.svg" alt="Dollar Icon" />
+					<img src="/images/icon-person.svg" alt="Dollar Icon" />
 					<input onChange={(e) => handleChange?.(e)} value={formData?.peopleAmount} type="text" name="peopleAmount" placeholder="0"></input>
 				</div>
 			</div>
