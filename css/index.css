@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap");
 form {
   display: flex;
   gap: 20px;
@@ -131,10 +131,10 @@ main {
   display: flex;
   justify-content: space-between;
 }
-.results-container .results .result div h2 {
+.results-container .results .result div h4 {
   color: hsl(0, 0%, 100%);
 }
-.results-container .results .result div span {
+.results-container .results .result div small {
   color: hsl(184, 14%, 56%);
 }
 .results-container .results .result h1 {
@@ -157,8 +157,7 @@ main {
 * {
   margin: 0;
   padding: 0;
-  font-family: "Nunito Sans", sans-serif;
-  font-weight: 900;
+  font-family: "Space Mono", monospace;
 }
 
 #root {

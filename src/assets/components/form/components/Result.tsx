@@ -9,17 +9,18 @@ function Result() {
 			<div className="results">
 				<div className="result">
 					<div className="tip-amount">
-						<h2>Tip Amount</h2>
-						<span>/ person</span>
+						<h4>Tip Amount</h4>
+						<small>/ person</small>
 					</div>
-					<h1>{results?.tipAmount && (results.tipAmount.toFixed(2))}$</h1>
+					<h1>{results?.tipAmount? results.tipAmount.toFixed(2) + "$": '0.00$'}</h1>
+
 				</div>
 				<div className="result">
 					<div className="total">
-						<h2>Total</h2>
-						<span>/ person</span>
+						<h4>Total</h4>
+						<small>/ person</small>
 					</div>
-					<h1>{results?.totalAmount && (results.totalAmount.toFixed(2))}$</h1>
+					<h1>{results?.totalAmount? results.totalAmount.toFixed(2) + "$": '0.00$'}</h1>
 
 				</div>
 			</div>
